@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Stepping up your style</title>
+</head>
+
+<body>
+    <div class="intro">
+        <div class="container container-intro">
+            <h1>Kodlifjellet</h1>
+            <p>Porten til <strong> vintereventyret</strong>.</p>
+            <p class="top-text">Desember 2021</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="Main-Content" class="container">
+            <h2>Blir du med Aud på tur? </h2>
+            <br>
+            <p>Fyll inn kontaktinfo</p>
+
+            <!-- form will go here -->
+            <form id="Email-Collector" class="email-collector" action="#" method="POST">
+                <label action="#" method="POST">Fornavn</label>
+
+                <br>
+                <input name="firstName" type="text" required placeholder="Fornavn">
+                <aria-label action="#">e-post</aria-label>
+                <br>
+                <input name="emailAdress" type="email" required placeholder="e-mail">
+                <button class="btn btn-primary" type="submit">Send inn</button>
+            </form>
+            <p class="fine-print">Ta med godt humør 😊</p>
+        </div>
+    </div>
+    <script>
+        let emailCollectorForm = document.getElementById("Email-Collector")
+        emailCollectorForm.addEventListener("submit", event => {
+            event.preventDefault()
+
+            let ourFormData = new FormData(event.target) //Henter inn alle data fra form
+
+            let userFirstName = ourFormData.get("firstName")
+            let userEmail = ourFormData.get("emailAdress")
+
+            let updatedHtmlContent = `
+            <h2>Gratulere, ${userFirstName}!</h2>
+            <p>Du er påmeldt tur til Kodlifjellet </p>
+            <p class="fine-print">Vi deler ikke din informasjon uten din tillatelse</p> `
+            let ourMainContent = document.getElementById("Main-Content")
+            ourMainContent.innerHTML = updatedHtmlContent
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    font-size: 1rem;
+    /* standard font size*/
+    color: #20f060;
+    text-align: center;
+}
+
+
+/* =================
+   Typography 
+   ================= */
+
+h1 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 2.25rem;
+    margin: 0;
+}
+
+h1+p {
+    color: #e1d7f5;
+    font-weight: 900;
+    font-size: 1.3125rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+/*gjelder hvis og bare hvis p kommer direkte etter h1*/
+
+
+/*~ tild vil gjøre at alle <p> i <div> som kommer under h1 vil ha disse egenskapene */
+
+h2 {
+    font-size: 1.3125rem;
+    margin: 0;
+}
+
+h2+p {
+    color: #018119;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.fine-print {
+    font-size: 0.625rem;
+    letter-spacing: 1px;
+}
+
+.top-text {
+    font-size: 0.625rem;
+    margin: 0;
+    font-weight: 900;
+    color: #F18119;
+    text-transform: uppercase;
+    order: -1;
+}
+
+.strong {
+    font-weight: 900;
+}
+
+
+/*************
+Intro Section
+*************/
+
+.intro {
+    background-image: url(images/port_vinter_fjelltur.jpg);
+    background-size: cover;
+    background-color: lightblue;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2em 1.5em 4em;
+}
+
+
+/* =================
+   main-content section 
+   ================= */
+
+.main-content {
+    padding: 2em 1em;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+
+.container-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
+}
+
+
+/* =================
+    Forms
+   ================= */
+
+.email-collector {
+    width: 80%;
+    max-width: 300px;
+}
+
+input {
+    width: 100%;
+    font-family: inherit;
+    text-align: inherit;
+    margin-bottom: 0.75em;
+    padding: 0.25em;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+input:focus {
+    transform: scale(1.05);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.25em 1.5em;
+    font-size: 0.625;
+    width: 100%;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to top left, rgb(10, 10, 123), rgb(230, 211, 175), rgb(120, 140, 231));
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    transform: scale(1.1);
+}
+
+
+/* =================
+   media queries 
+   ================= */
+
+@media (min-width: 500px) {
+    body {
+        font-size: 1.125rem;
+        background-color: #200330;
+        display: flex;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2,
+    h1+p {
+        font-size: 1.75rem;
+    }
+    .main-content,
+    .intro {
+        width: 50%;
+        min-height: 100vh
+    }
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .container-intro {
+        height: 100%;
+    }
+}
